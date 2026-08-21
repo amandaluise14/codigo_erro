@@ -1,6 +1,9 @@
 <?php
 
-$sql = "SELECT id, nome, email, FROM usuarios ORDER BY id DESC";
+include "infra/conexao.php";
+
+$sql = "SELECT id, nome, email FROM usuarios ORDER BY id DESC";
+
 $resultado = $conn->query($sql);
 
 ?>
