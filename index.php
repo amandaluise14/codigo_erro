@@ -1,6 +1,6 @@
 <?php
 
-include "infra/conexao.php";
+include "infra/connect.php";
 
 $sql = "SELECT id, nome, email FROM usuarios ORDER BY id DESC";
 
