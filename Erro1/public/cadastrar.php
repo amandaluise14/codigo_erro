@@ -1,5 +1,7 @@
 <?php
 
+include "../infra/connect.php";
+
 if (isset($_POST['cadastrar'])) {
     
     $nome = $_POST['nome'];
@@ -11,8 +13,6 @@ if (isset($_POST['cadastrar'])) {
     $stmt->bind_param("ss", $nome, $email);
     $stmt->execute();
 
-    header("Location: ../index.php");
-    exit;
 };
-
+header("Location: ../index.php");
 ?>

@@ -1,4 +1,5 @@
 <?php
+include "infra/connect.php";
 
 if (isset($_POST['editar'])) {
 
@@ -12,7 +13,6 @@ if (isset($_POST['editar'])) {
     $stmt->bind_param("ssi", $nome, $email, $id);
 
     $stmt->execute();
-
-    header("Location: index.php");
-    exit;
-}
+};
+header("Location:../index.php");
+?>

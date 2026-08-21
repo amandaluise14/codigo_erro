@@ -20,7 +20,7 @@ $resultado = $conn->query($sql);
 
     <h1>Cadastro de Usuários</h1>
 
-    <form method="POST">
+    <form method="POST" action="public/cadastrar.php">
 
             <label>Nome:</label>
             <input type="text" name="nome" required>
@@ -46,25 +46,18 @@ $resultado = $conn->query($sql);
             <th>Ações</th>
         </tr>
 
-        <?php while ($usuario = $resultado->fetch_assoc()) { ?>
+        <?php while ($usuario = mysqli_fetch_assoc($resultado)) { ?>
 
             <tr>
 
-                <td>
-                    <?= $usuario['id'] ?>
-                </td>
-                <td>
-                    <?= $usuario['nome'] ?>
-                </td>
-                <td>
-                    <?= $usuario['email'] ?>
-                </td>
+                <td><?php echo $usuario['id'] ?></td>
+                <td><?php echo $usuario['nome'] ?></td>
+                <td><?php echo $usuario['email'] ?></td>
 
                 <td>
 
-                    <a href="index.php?excluir=<?= $usuario['id'] ?>">
-                        Excluir
-                    </a>
+                    <a href="public/excluir.php"=<?= $usuario['id'] ?>">Excluir</a>
+                    <a href="public/editar.php"=<?= $usuario['id'] ?>">Editar</a>
 
                 </td>
 
